@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 301;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: transparentize($color: $background-color, $amount: 0.1);
+}

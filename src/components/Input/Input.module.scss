@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+  height: 3.315rem;
+  background-color: $primary-green;
+  & .placeholder {
+    position: absolute;
+    user-select: none;
+    top: 50%;
+    right: 1em;
+    transform: translate(0, -50%);
+    font-weight: 600;
+    opacity: 0.3;
+  }
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 3px solid #000;
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2.25rem;
+  padding: 0 0.5rem;
+  color: #fff;
+  z-index: 1;
+  position: relative;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

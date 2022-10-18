@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+
+.box {
+  min-width: 500px;
+
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(136.33deg, $primary-green 7.74%, $secondary-green 98.49%);
+
+  background-color: $background-color;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  padding: 2.5rem;
+  transform-style: preserve-3d;
+
+  & .shadow {
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translateZ(-10px) translateX(-50%) translateY(-50%);
+
+    background: radial-gradient(50% 50% at 50% 50%, $primary-green 0%, $secondary-green 40%, $background-color 100%);
+    filter: blur(30px);
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+}

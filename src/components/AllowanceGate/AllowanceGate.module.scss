@@ -1,0 +1,66 @@
+@import "../../styles/variables";
+
+.buttonGroup {
+  width: 100%;
+  border: 3px solid black;
+
+  .checkmark {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparentize($color: $primary-green, $amount: 0.4);
+
+    &.success {
+      color: #00feb3;
+    }
+  }
+
+  .button {
+    position: relative;
+    border: 0;
+    flex: 3;
+    margin-right: 0 !important;
+    clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 50%, calc(100% - 13px) 100%, 0 100%);
+
+    &.success {
+      background-color: #00feb3;
+      color: black;
+      opacity: 1;
+
+      // &::after {
+      //   background-color: #00feb3;
+      // }
+    }
+
+    // &:hover:not(:disabled) {
+    //   &::after {
+    //     background-color: darken($color: $primary-green, $amount: 10%);
+    //   }
+    // }
+  }
+
+  // .button::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 100%;
+  //   width: 13px;
+  //   height: 100%;
+  //   background-color: $primary-green;
+  //   clip-path: polygon(0 0, 100% 50%, 0 100%);
+  // }
+
+  .approveButton {
+    z-index: 2;
+    border-right: 0;
+  }
+
+  .actionButton {
+    z-index: 1;
+    margin-left: -13px;
+    padding-left: 13px;
+    border-left: 0;
+    border-right: 0;
+  }
+}

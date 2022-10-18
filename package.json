@@ -1,0 +1,90 @@
+{
+  "name": "sherlock-v2-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.5.8",
+    "@sentry/react": "^6.19.7",
+    "@sentry/tracing": "^6.19.7",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^16.11.22",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "axios": "^0.26.0",
+    "buffer": "^6.0.3",
+    "classnames": "^2.3.1",
+    "ethers": "^5.5.3",
+    "graphql": "^16.3.0",
+    "graphql-scalars": "^1.14.1",
+    "graphql-tools": "^8.2.0",
+    "graphql.macro": "^1.4.2",
+    "luxon": "^2.3.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
+    "recharts": "^2.1.9",
+    "sass": "^1.52.3",
+    "sass-loader": "^13.0.0",
+    "typescript": "^4.5.5",
+    "use-debounce": "^7.0.1",
+    "wagmi": "^0.6.4",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "contract-typings": "typechain --target=ethers-v5 --out-dir src/contracts src/abi/*.json",
+    "graphql-codegen": "graphql-codegen --config codegen.yml",
+    "prepare": "husky install",
+    "generate-metas": "node ./scripts/GenerateProtocolMeta.ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.5.0",
+    "@graphql-codegen/introspection": "2.1.1",
+    "@graphql-codegen/typescript": "2.4.3",
+    "@graphql-codegen/typescript-operations": "2.2.4",
+    "@graphql-codegen/typescript-react-apollo": "3.2.5",
+    "@typechain/ethers-v5": "^9.0.0",
+    "@types/luxon": "^2.0.9",
+    "csv-parser": "^3.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.2",
+    "prettier": "2.5.1",
+    "typechain": "^7.0.0"
+  }
+}

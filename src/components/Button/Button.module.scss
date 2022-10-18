@@ -1,0 +1,107 @@
+@import "../../styles/variables";
+
+.button {
+  background-color: $primary-green;
+  color: white;
+  border: 3px solid black;
+
+  .content {
+    padding: 0 0.5em;
+  }
+
+  &:hover:not(:disabled) {
+    cursor: pointer;
+    background-color: darken($color: $primary-green, $amount: 10%);
+  }
+
+  &.secondary {
+    background-color: inherit;
+    font-weight: 500;
+    border: none;
+
+    &:hover {
+      background-color: inherit;
+    }
+  }
+
+  &.alternate {
+    background-color: $alternate-pink;
+    color: black;
+
+    &:hover:not(:disabled) {
+      cursor: pointer;
+      background-color: darken($color: $alternate-pink, $amount: 10%);
+    }
+  }
+
+  &.cta {
+    position: relative;
+    background: none;
+    color: black;
+    border: none;
+    min-width: 9rem;
+    margin: 0;
+    padding: 0;
+    &::before {
+      content: "";
+      position: absolute;
+      height: calc(100% - 14px);
+      width: calc(100% - 14px);
+      background-color: $background-green;
+      border: 3px solid $primary-green;
+      bottom: 0;
+      left: 0;
+    }
+
+    .content {
+      margin-bottom: 8px;
+      margin-left: 8px;
+      background-color: white;
+      border: 3px solid black;
+      top: 0;
+      right: 0;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      transition: transform ease 0.2s;
+      transform: translate(0, 0);
+    }
+
+    &:hover {
+      background: none;
+      &::before {
+        background-color: $primary-green;
+      }
+      .content {
+        transform: translate(5px, -5px);
+      }
+    }
+
+    &:active {
+      .content {
+        transform: translate(5px, 0);
+      }
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.normal {
+  min-width: 7.5rem;
+  width: auto;
+
+  font-size: 1.125rem; // 18px if root is 16px
+  font-weight: bold;
+  line-height: 2.25rem; // 36px if root is 16px
+}
+
+.small {
+  height: 2rem;
+
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 0.875rem;
+}
