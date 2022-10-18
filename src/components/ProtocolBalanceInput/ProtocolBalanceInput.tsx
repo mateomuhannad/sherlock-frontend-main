@@ -51,8 +51,6 @@ const ProtocolBalanceInput: React.FC<Props> = ({ onChange = () => null, protocol
       }
 
       // Transform period from weeks to seconds
-      const seconds = weeks * 7 * 24 * 60 * 60
-      const totalAmount = protocolPremium.mul(seconds)
 
     },
     [protocolPremium]

@@ -6,18 +6,7 @@ type TVLDataPoint = {
   totalLiquidityUSD: number
 }
 
-type GetTVLOverTimeResponseData =
-  | {
-    ok: true
-    data: {
-      timestamp: number
-      value: string
-    }[]
-  }
-  | {
-    ok: false
-    error: string
-  }
+
 
 // const parseResponse = (response: GetTVLOverTimeResponseData): TVLDataPoint[] | null => {
 //   if (response.ok === false) return null

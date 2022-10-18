@@ -5,7 +5,6 @@ import styles from "./Protocol.module.scss"
 import { convertSecondsToDurationString } from "../../utils/time"
 import useERC20 from "../../hooks/useERC20"
 import ConnectGate from "../../components/ConnectGate/ConnectGate"
-import useWaitTx from "../../hooks/useWaitTx"
 import { Box } from "../../components/Box"
 import { Column, Row } from "../../components/Layout"
 import { Title } from "../../components/Title"
@@ -14,7 +13,6 @@ import Select from "../../components/Select/Select"
 import { formatAmount } from "../../utils/format"
 import { useCoveredProtocols, CoveredProtocol } from "../../hooks/api/useCoveredProtocols"
 import { DateTime } from "luxon"
-import { useAccount } from "wagmi"
 
 export const ProtocolPage: React.FC = () => {
   const [selectedProtocolId, setSelectedProtocolId] = React.useState<string>()
