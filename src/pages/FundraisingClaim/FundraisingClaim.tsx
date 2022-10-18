@@ -1,5 +1,5 @@
 import { ethers } from "ethers"
-import React, { useCallback, useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { useAccount } from "wagmi"
 
 import { useFundraisePosition } from "../../hooks/api/useFundraisePosition"
@@ -26,7 +26,7 @@ export const FundraisingClaimPage = () => {
   /**
    * Wheter the claim is active or not.
    */
-  const [claimIsActive, setClaimIsActive] = useState(false)
+  const [claimIsActive] = useState(false)
 
   /**
    * Execute GraphQL query to fetch fundraise position once the user's account is available

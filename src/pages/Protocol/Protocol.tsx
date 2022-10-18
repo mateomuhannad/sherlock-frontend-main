@@ -3,8 +3,6 @@ import React from "react"
 import ProtocolBalanceInput from "../../components/ProtocolBalanceInput/ProtocolBalanceInput"
 import styles from "./Protocol.module.scss"
 import { convertSecondsToDurationString } from "../../utils/time"
-import AllowanceGate from "../../components/AllowanceGate/AllowanceGate"
-import { Button } from "../../components/Button/Button"
 import useERC20 from "../../hooks/useERC20"
 import ConnectGate from "../../components/ConnectGate/ConnectGate"
 import useWaitTx from "../../hooks/useWaitTx"
@@ -20,11 +18,11 @@ import { useAccount } from "wagmi"
 
 export const ProtocolPage: React.FC = () => {
   const [selectedProtocolId, setSelectedProtocolId] = React.useState<string>()
-  const [balance, setBalance] = React.useState<BigNumber>()
-  const [coverageLeft, setCoverageLeft] = React.useState<BigNumber>()
+  const [balance] = React.useState<BigNumber>()
+  const [coverageLeft] = React.useState<BigNumber>()
 
   const { data: coveredProtocols, getCoveredProtocols } = useCoveredProtocols()
-  const accountData = useAccount()
+
 
   const protocolSelectOptions = React.useMemo(
     () =>
@@ -44,7 +42,7 @@ export const ProtocolPage: React.FC = () => {
    */
   const [amount, setAmount] = React.useState<BigNumber>()
   const { balance: usdcBalance } = useERC20("USDC")
-  const { waitForTx } = useWaitTx()
+
 
   /**
    * Handler for changing the protocol
@@ -149,8 +147,8 @@ export const ProtocolPage: React.FC = () => {
                   {!selectedProtocol?.coverageEndedAt
                     ? "Active"
                     : `Ended ${DateTime.fromJSDate(selectedProtocol?.coverageEndedAt)
-                        .setLocale("en")
-                        .toLocaleString(DateTime.DATETIME_MED)}`}
+                      .setLocale("en")
+                      .toLocaleString(DateTime.DATETIME_MED)}`}
                 </Text>
               </Column>
             </Row>

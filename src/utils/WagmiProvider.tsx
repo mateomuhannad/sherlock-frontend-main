@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react"
-import { WagmiConfig, defaultChains, createClient, configureChains, chain } from "wagmi"
+import { WagmiConfig, defaultChains, createClient, configureChains } from "wagmi"
 import { InjectedConnector } from "wagmi/connectors/injected"
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect"
 import { publicProvider } from "wagmi/providers/public"

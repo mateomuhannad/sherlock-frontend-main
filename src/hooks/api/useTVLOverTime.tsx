@@ -1,7 +1,5 @@
 import { useCallback, useState } from "react"
-import { BigNumber } from "ethers"
 import axios from "./axios"
-import { getTVLOverTime as getTVLOverTimeUrl } from "./urls"
 
 type TVLDataPoint = {
   date: string
@@ -10,16 +8,16 @@ type TVLDataPoint = {
 
 type GetTVLOverTimeResponseData =
   | {
-      ok: true
-      data: {
-        timestamp: number
-        value: string
-      }[]
-    }
+    ok: true
+    data: {
+      timestamp: number
+      value: string
+    }[]
+  }
   | {
-      ok: false
-      error: string
-    }
+    ok: false
+    error: string
+  }
 
 // const parseResponse = (response: GetTVLOverTimeResponseData): TVLDataPoint[] | null => {
 //   if (response.ok === false) return null

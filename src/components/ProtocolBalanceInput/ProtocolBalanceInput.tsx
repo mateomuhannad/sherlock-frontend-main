@@ -3,7 +3,6 @@ import React from "react"
 import { Button } from "../Button/Button"
 import { useDebounce } from "use-debounce"
 import { Column, Row } from "../Layout"
-import TokenInput from "../TokenInput/TokenInput"
 import { Text } from "../Text"
 
 interface Props {
@@ -36,7 +35,6 @@ const ProtocolBalanceInput: React.FC<Props> = ({ onChange = () => null, protocol
    */
   const [amount, setAmount] = React.useState<BigNumber>()
   const [debouncedAmountBN] = useDebounce(amount, 200)
-  const [predefinedAmount, setPredefinedAmount] = React.useState<BigNumber>()
 
   /**
    * Duration in seconds
@@ -56,9 +54,8 @@ const ProtocolBalanceInput: React.FC<Props> = ({ onChange = () => null, protocol
       const seconds = weeks * 7 * 24 * 60 * 60
       const totalAmount = protocolPremium.mul(seconds)
 
-      setPredefinedAmount(totalAmount)
     },
-    [protocolPremium, setPredefinedAmount]
+    [protocolPremium]
   )
 
   /**
